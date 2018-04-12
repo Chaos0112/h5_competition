@@ -1,8 +1,41 @@
-#story-list {
-    font-size: 15px
+
+*{
+    margin:0;
+    padding: 0;
 }
 
 html{
     width: 100%;
     margin: 0;
+}
+
+body{
+    margin: 0;
+}
+
+/* 包裹ul的divw外面的div */
+.wrapper{
+    margin: 0;
+    background: #00f;
+}
+
+/* 包裹ul的div */
+#story-list {
+    font-size: 15px;
+    background: #4444;
+    margin: 0;
+}
+
+
+
+
+ul li{
+    list-style-type:none;
+    margin-bottom: 5px;
+    background: #0f0;
+    margin-left: 0;
+    padding: 0;
+    height: 60px;
+    line-height: 60px;
+    
 }
