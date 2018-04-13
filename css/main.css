@@ -1,41 +1,66 @@
-
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
 }
 
-html{
-    width: 100%;
-    margin: 0;
+html {
+    
+    margin: 0 auto;
 }
 
-body{
+body {
     margin: 0;
 }
 
 /* 包裹ul的divw外面的div */
-.wrapper{
+
+.wrapper {
     margin: 0;
     background: #00f;
 }
 
 /* 包裹ul的div */
+
 #story-list {
     font-size: 15px;
-    background: #4444;
+    background: rgb(177, 52, 52);
     margin: 0;
 }
 
-
-
-
-ul li{
-    list-style-type:none;
-    margin-bottom: 5px;
-    background: #0f0;
-    margin-left: 0;
-    padding: 0;
-    height: 60px;
-    line-height: 60px;
+ul li {
+    list-style-type: none;
+    margin-bottom: 1px;
+    background-color: rgb(247, 0, 255);
+    /* background-image: url('../images/ic_sq.png'); */
+    font-family: Arial, Helvetica, sans-serif;
     
+}
+
+img {
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 5px;
+    text-align: center
+}
+
+th {
+    background-color: gray;
+    color: white;
+}
+
+tr:nth-child(odd){
+    background-color: wheat;
 }
