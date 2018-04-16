@@ -8,16 +8,6 @@ html {
     margin: 0 auto;
 }
 
-body {
-    margin: 0;
-}
-
-/* 包裹ul的divw外面的div */
-
-.wrapper {
-    margin: 0;
-    background: #00f;
-}
 
 /* 包裹ul的div */
 
@@ -33,7 +23,6 @@ ul li {
     background-color: rgb(247, 0, 255);
     /* background-image: url('../images/ic_sq.png'); */
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
 img {
@@ -42,25 +31,4 @@ img {
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    font-size: 20px;
-    border: 1px solid #000;
-    padding: 5px;
-    text-align: center
-}
-
-th {
-    background-color: gray;
-    color: white;
-}
-
-tr:nth-child(odd){
-    background-color: wheat;
 }
