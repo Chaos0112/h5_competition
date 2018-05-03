@@ -6,13 +6,13 @@
 html {
     margin: 0 auto;
     font-size: 32px;
+    background: rgb(244, 244, 246);
 }
 
 /* 包裹ul的div */
 
 #story-list {
     font-size: 0.3rem;
-    background: rgb(15, 15, 15);
     margin: 0;
 }
 
@@ -31,7 +31,7 @@ img.user-avatar {
     margin-left: 0.2rem;
     margin-right: 0.2rem;
     width: 0.9rem;
-    height:  0.9rem;
+    height: 0.9rem;
     background: #fff;
     border-radius: 50%;
 }
@@ -55,7 +55,7 @@ p.item-first-text {
 p.item-second-text {
     margin-top: 5px;
     color: #8697A1;
-    font-size: 0.25rem;
+    font-size: 0.2rem;
 }
 
 /* 作品名称 */
@@ -66,8 +66,110 @@ p.item-second-text {
 }
 
 .rank-icon {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.45rem;
+    height: 0.45rem;
     margin-left: 0.3rem;
     vertical-align: middle;
+}
+
+div.head {
+    font-size: 0.35rem;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 0.3rem;
+}
+
+div.activity-detail {
+    background-color: white;
+}
+
+.activity-detail p.detail-text {
+    background-color: white;
+    font-size: 0.31rem;
+    color: #27283c;
+    padding: 0.25rem;
+    border-bottom: 1px solid #f4f4f6;
+}
+
+#activity-name {
+    display: inline-block;
+    width: 60%;
+}
+
+#user-name {
+    font-size: 0.25rem;
+    color: #8697A1;
+    margin-right: 0.3rem;
+    width: 30%;
+    float: right;
+    text-align: right;
+    right: 0;
+}
+
+#user-name font {
+    text-align: left;
+    display: inline-block
+}
+
+span.detail-right {
+    font-size: 0.25rem;
+    color: #8697A1;
+    margin-right: 0.3rem;
+    width: 60%;
+    float: right;
+    position: relative;
+    text-align: right;
+    display: block;
+}
+
+span.detail-right font {
+    text-align: left;
+    display: inline-block
+}
+
+#vote-date-title {
+    background-color: white;
+    font-size: 0.25rem;
+    color: #8697A1;
+    padding: 0.25rem;
+}
+
+#vote-date-row {
+    background-color: white;
+    font-size: 0.25rem;
+    color: #8697A1;
+    border-bottom: 1px solid #f4f4f6;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.vote-time-rule-title {
+    background-color: white;
+    font-size: 0.31rem;
+    color: #27283c;
+    padding: 0.25rem;
+    border-bottom: 10px solid #f4f4f6;
+    
+}
+
+
+
+.vote-time {
+    font-size: 0.25rem;
+    color: #8697A1;
+    margin-right: 0.3rem;
+    float: right;
+    position: relative;
+    text-align: right;
+    display: block;
+    border: 1px solid #8697A1;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#vote-time-font {
+    text-align: left;
+    display: inline-block
+
 }
