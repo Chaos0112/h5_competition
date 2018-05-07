@@ -88,11 +88,33 @@
                 </ul>
             </div>
         </div>
-
+        <div id="dowload-lem">
+            <a id="download" href="#">下载柠檬手记</a>
+        </div>
     </div>
 
     <script src="js/ranking.js"></script>
-   
+    <script>
+
+        var download = document.getElementById("download");
+            download.onclick = function () {
+                var ua = navigator.userAgent;
+                console.log(ua);
+                if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                    alert("请点击右上角\"...\"，选择在浏览器打开，然后再点击下载按钮");
+                } else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                    console.log('Apple');
+                    window.location.href = "https://itunes.apple.com/us/app/柠檬手记/id1309451388";
+                } else if (/(Android)/i.test(navigator.userAgent)) {
+                    console.log('Android')
+                    window.location.href = "http://download.lem6.cn/Lemon_v2.0.5_official_20180302_205_jiagu_sign.apk";
+                } else {
+                    console.log('window')
+                    window.location.href = "http://download.lem6.cn/Lemon_v2.0.5_official_20180302_205_jiagu_sign.apk";
+                }
+            };
+
+    </script>
 
 
 

@@ -15,7 +15,7 @@ function getAid(name) {
 
 
 aid = getAid('aid');
-console.log("aid="+aid);
+// console.log("aid="+aid);
 
 $.ajax({
     url: "https://api.lem6.cn/v1/activity/"+aid+"/1/30/rank", success: function (result) {
@@ -24,8 +24,8 @@ $.ajax({
         // console.log(datas.length);
         for (let index = 0; index < datas.length; index++) {
             
-            console.log(datas[index].rank);
-            console.log(datas[index].story_avatar);
+            // console.log(datas[index].rank);
+            // console.log(datas[index].story_avatar);
             var avatar='';
             if (datas[index].story_avatar.indexOf('http')==0) {
                 avatar = datas[index].story_avatar;
@@ -33,7 +33,7 @@ $.ajax({
                 avatar = "https://lem6.oss-cn-shenzhen.aliyuncs.com/avatar/" + datas[index].story_uid + "/" + datas[index].story_avatar;
             }
             
-            var nickName;
+            let nickName;
             if (datas[index].story_nickname==='') {
                 nickName = datas[index].story_uid;
             }else{
@@ -41,7 +41,7 @@ $.ajax({
             }
             
 
-            var rankIcon;
+            let rankIcon;
             if (datas[index].rank===1) {
                 rankIcon = '<img class="rank-icon"   src= "images/ic_jinpai.png" >' + '<img class="user-avatar" src=' + avatar + '>'
             } else if (datas[index].rank === 2) {
@@ -53,13 +53,31 @@ $.ajax({
                 
             }
 
-
-            $('#the-list').append($('<li>' + rankIcon +
+            let storyLink;
+            let storyLinkUrl = "https://www.lem6.cn/lemo_storychapter.html?sharekey=" + datas[index].story_sharekey;
+            storyLink = "<span class='story-link' style='display:none'>"+storyLinkUrl+"</span>"
+            
+            $li_storyItem = $('<li>' +storyLink + rankIcon +
             '<div class="item-text">\
-            <p class="item-first-text">'+ datas[index].story_nickname + '&nbsp&nbsp&nbsp<span class="item-text-works-name">' + datas[index].title+'</span> </p>\
-            <p class="item-second-text">获得票数：'+ datas[index].num +'票</p>\
+            <p class="item-first-text">'+ datas[index].story_nickname + '&nbsp&nbsp&nbsp<span class="item-text-works-name">' + datas[index].title + '</span> </p>\
+            <p class="item-second-text">获得票数：'+ datas[index].num + '票</p>\
             </div>\
-            </li>'));
+            </li>');
+            
+            $li_storyItem.click(function () {
+                
+                window.location.href = $(this).find(".story-link").text();
+
+            });
+
+            // $li_storyItem.on('tap',function () {
+
+            //     window.location.href = $(this).find(".story-link").text();
+
+            // });
+
+
+            $('#the-list').append($li_storyItem);
             
         }
 
@@ -135,7 +153,7 @@ window.onload = function () {//进入页面就执行ajax，目的为了传送当
         crossDomain: true,
         success: function (ress) {
             //成功则执行JS-SDK
-            console.log(ress);//查看返回结果
+            // console.log(ress);//查看返回结果
             //执行JS_SDK
             wx.config({
                 debug: false,

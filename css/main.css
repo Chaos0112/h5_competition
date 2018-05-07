@@ -7,7 +7,7 @@ html {
     margin: 0 auto;
     font-size: 32px;
     background: #f4f4f6;
-    padding-bottom: 50px;
+    padding-bottom: 8rem;
 }
 
 /* 包裹ul的div */
@@ -187,4 +187,25 @@ span.detail-right font {
 #vote-time-font {
     text-align: left;
     display: inline-block
+}
+
+#dowload-lem {
+    width: 100%;
+    max-width: 7.5rem;
+    position: fixed;
+    bottom: 0;
+    background: #45daa8;
+    text-align: center;
+    z-index: 500;
+    height: 1rem;
+    line-height: 1rem;
+}
+
+#dowload-lem a {
+    height: 1rem;
+    line-height: 1rem;
+    display: block;
+    font-size: 0.36rem;
+    color: #fff;
+    text-decoration: none;
 }
