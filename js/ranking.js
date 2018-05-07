@@ -4,8 +4,21 @@ var activityTitle = '';
 var activityDesc = '';
 var shareIcon = "https://www.lem6.cn/images/share_default_icon.png";
 
+var aid;
+
+function getAid(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;  
+}
+
+
+aid = getAid('aid');
+console.log("aid="+aid);
+
 $.ajax({
-    url: "http://api.lem6.cn/v1/activity/61/1/30/rank", success: function (result) {
+    url: "http://api.lem6.cn/v1/activity/"+aid+"/1/30/rank", success: function (result) {
         // console.log(result);
         var datas = result.data;
         // console.log(datas.length);
@@ -57,7 +70,7 @@ $.ajax({
 });
 
 $.ajax({
-    url: "http://api.lem6.cn/v1/activity/h5/61/detail", success: function (result) {
+    url: "http://api.lem6.cn/v1/activity/h5/"+aid+"/detail", success: function (result) {
         $('#activity-name').text(result.data.activity_name);
         $('#user-name font').text(result.data.creator_nickname);
         $('#activity-desc').text(result.data.activity_describe);
@@ -121,7 +134,7 @@ window.onload = function () {//进入页面就执行ajax，目的为了传送当
         crossDomain: true,
         success: function (ress) {
             //成功则执行JS-SDK
-            // console.log(ress);//查看返回结果
+            console.log(ress);//查看返回结果
             //执行JS_SDK
             wx.config({
                 debug: false,
