@@ -18,7 +18,7 @@ aid = getAid('aid');
 console.log("aid="+aid);
 
 $.ajax({
-    url: "http://api.lem6.cn/v1/activity/"+aid+"/1/30/rank", success: function (result) {
+    url: "https://api.lem6.cn/v1/activity/"+aid+"/1/30/rank", success: function (result) {
         // console.log(result);
         var datas = result.data;
         // console.log(datas.length);
@@ -54,7 +54,6 @@ $.ajax({
             }
 
 
-
             $('#the-list').append($('<li>' + rankIcon +
             '<div class="item-text">\
             <p class="item-first-text">'+ datas[index].story_nickname + '&nbsp&nbsp&nbsp<span class="item-text-works-name">' + datas[index].title+'</span> </p>\
@@ -70,7 +69,7 @@ $.ajax({
 });
 
 $.ajax({
-    url: "http://api.lem6.cn/v1/activity/h5/"+aid+"/detail", success: function (result) {
+    url: "https://api.lem6.cn/v1/activity/h5/"+aid+"/detail", success: function (result) {
         $('#activity-name').text(result.data.activity_name);
         $('#user-name font').text(result.data.creator_nickname);
         $('#activity-desc').text(result.data.activity_describe);
@@ -78,6 +77,8 @@ $.ajax({
         $('#activity-apply-deadline').text(formatDate(result.data.apply_deadline, 'MM月DD日 hh:mm'));
         $('#vote-begin').text(formatDate(result.data.vote_starttime, 'MM月DD日 hh:mm'));
         $('#activity-end').text(formatDate(result.data.vote_deadline, 'MM月DD日 hh:mm'));
+        $('title').text('柠檬手记——' + result.data.activity_name)
+
         activityTitle = result.data.activity_name;
         activityDesc = result.data.activity_describe;
 
